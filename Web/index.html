@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Safety Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="shield-icon">🛡️</div>
+            <h1>URL Safety Checker</h1>
+            <p class="subtitle">Protect yourself from malicious websites</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-text">Instant Check</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <div class="feature-text">Secure Scan</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✅</div>
+                <div class="feature-text">Reliable</div>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="urlInput" placeholder="Enter URL to check (e.g., https://example.com)">
+        </div>
+
+        <button class="check-btn" onclick="checkURL()">🔍 Check URL Safety</button>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p style="margin-top: 10px; color: #666;">Analyzing URL...</p>
+        </div>
+
+        <div class="result" id="result"></div>
+
+        <div class="telegram-section">
+            <p class="telegram-title">💬 Check URLs on Telegram</p>
+            <a href="https://t.me/URL_Safety_Checker_bot" class="telegram-btn" target="_blank">
+                <span class="telegram-icon">✈️</span>
+                <span>Open Telegram Bot</span>
+            </a>
+            <p style="margin-top: 15px; font-size: 14px; color: #666;">
+                Our bot uses Google Safe Browsing API for instant URL verification
+            </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
