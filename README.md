@@ -89,4 +89,4 @@ MP/
 
 ---
 
-© 2025 URL Safety Checker • Designed for Academic Project Use Only • All Rights Reserved
+© 2025 URL Safety Checker • Mini Project-I 2025-26 • All Rights Reserved
