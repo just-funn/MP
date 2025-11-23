@@ -87,10 +87,6 @@ MP/
 3. Zeenat Shaikh
 4. Vishwajeet Kumbhar
 
-## 🤝 Contributing
-
-All team members.
-
 ---
 
 © 2025 URL Safety Checker • Designed for Academic Project Use Only • All Rights Reserved
