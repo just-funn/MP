@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="URL Safety Checker Dashboard - Check links for threats">
+    <title>Dashboard - URL Safety Checker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="dashboard-body">
+    <!-- Top Navigation Bar -->
+    <nav class="dashboard-nav">
+        <div class="dashboard-nav-content">
+            <h1 class="dashboard-nav-title"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i> URL Safety Checker Dashboard</h1>
+            <button class="btn-logout" onclick="handleLogout()" aria-label="Logout from dashboard">
+                <i class="fas fa-sign-out-alt" style="margin-right: 6px;"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Dashboard Content -->
+    <main class="dashboard-main">
+        <!-- Card 1: URL Checker -->
+        <section class="dashboard-card">
+            <div class="card-header">
+                <div class="shield-icon"><i class="fas fa-shield-alt"></i></div>
+                <h2>Check a URL</h2>
+                <p class="card-subtitle">Enter any link below to verify if it's safe to visit</p>
+            </div>
+
+            <div class="card-body"></div>
+                <!-- URL Input -->
+                <div class="input-group">
+                    <label for="urlInput">Enter URL to Check</label>
+                    <input 
+                        type="text" 
+                        id="urlInput" 
+                        placeholder="https://example.com"
+                        aria-label="URL input field"
+                        aria-describedby="urlHelp"
+                    >
+                    <p id="urlHelp" class="input-help">
+                        Enter a full URL starting with http:// or https://
+                    </p>
+                </div>
+
+                <!-- Check Button -->
+                <button class="btn check-btn" onclick="checkURL()" aria-label="Check URL safety">
+                    <i class="fas fa-search" style="margin-right: 8px;"></i> Check URL Safety
+                </button>
+
+                <!-- Loading Spinner -->
+                <div class="loading" id="loading" role="status" aria-live="polite">
+                    <div class="spinner" aria-hidden="true"></div>
+                    <p class="loading-text">Analyzing URL...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card 2: Result (shown dynamically) -->
+        <div class="result" id="result" role="alert" aria-live="assertive"></div>
+
+        <!-- Card 3: Features -->
+        <section class="dashboard-card">
+            <div class="card-header">
+                <h2>Features</h2>
+                <p class="card-subtitle">Why use our URL Safety Checker?</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h3 class="feature-title">Instant Check</h3>
+                    <p class="feature-text">Get results in seconds with our fast verification system</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-lock"></i></div>
+                    <h3 class="feature-title">Secure Scan</h3>
+                    <p class="feature-text">Powered by Google Safe Browsing API technology</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3 class="feature-title">Reliable</h3>
+                    <p class="feature-text">Trusted threat detection for malware and phishing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Card 4: Telegram Bot -->
+        <section class="dashboard-card telegram-card">
+            <div class="card-header">
+                <div style="font-size: 48px; margin-bottom: 10px; color: #0088cc;"><i class="fas fa-comments"></i></div>
+                <h2>Check URLs on Telegram</h2>
+                <p class="card-subtitle">Use our Telegram bot for instant URL verification on-the-go</p>
+            </div>
+
+            <div class="card-body" style="text-align: center;">
+                <p style="color: #64748b; font-size: 15px; margin-bottom: 20px; line-height: 1.6;">
+                    Get real-time threat detection directly in your Telegram app. 
+                    Fast, secure, and always available.
+                </p>
+                <a 
+                    href="https://t.me/URL_Safety_Checker_bot" 
+                    class="telegram-btn" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="Open URL Safety Checker Telegram Bot"
+                >
+                    <span class="telegram-icon" aria-hidden="true"><i class="fab fa-telegram-plane"></i></span>
+                    <span>Open Telegram Bot</span>
+                </a>
+                <p style="margin-top: 15px; font-size: 13px; color: #64748b;">
+                    Powered by Google Safe Browsing API
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

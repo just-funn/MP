@@ -3,57 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>URL Safety Checker</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="URL Safety Checker - Check links before you click and stay protected online">
+    <title>URL Safety Checker - Stay Protected Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="shield-icon">🛡️</div>
-            <h1>URL Safety Checker</h1>
-            <p class="subtitle">Protect yourself from malicious websites</p>
-        </div>
+    <div class="page-container">
+        <div style="max-width: 1200px; width: 100%; padding: 20px;">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-icon"><i class="fas fa-shield-alt"></i></div>
+                <h1 class="hero-title">URL Safety Checker</h1>
+                <p class="hero-subtitle">Check links before you click — stay protected online</p>
+            </section>
 
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-text">Instant Check</div>
+            <!-- Info Cards -->
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h3 class="info-card-title">Why Check URLs?</h3>
+                    <p class="info-card-text">
+                        Phishing attacks and malware are increasingly common. Malicious links can steal your data, 
+                        compromise your accounts, or infect your device. Always verify before you click.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3 class="info-card-title">How We Help</h3>
+                    <p class="info-card-text">
+                        Our URL Safety Checker provides instant verification of suspicious links. Use our web dashboard 
+                        for quick checks or connect with our Telegram bot for on-the-go protection.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3 class="info-card-title">Best Practices</h3>
+                    <p class="info-card-text">
+                        Never click shortened URLs from unknown sources. Verify sender identity before opening links. 
+                        Look for HTTPS and check domain spelling. When in doubt, use our checker first.
+                    </p>
+                </div>
             </div>
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <div class="feature-text">Secure Scan</div>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">✅</div>
-                <div class="feature-text">Reliable</div>
-            </div>
-        </div>
 
-        <div class="input-group">
-            <input type="text" id="urlInput" placeholder="Enter URL to check (e.g., https://example.com)">
-        </div>
-
-        <button class="check-btn" onclick="checkURL()">🔍 Check URL Safety</button>
-
-        <div class="loading" id="loading">
-            <div class="spinner"></div>
-            <p style="margin-top: 10px; color: #666;">Analyzing URL...</p>
-        </div>
-
-        <div class="result" id="result"></div>
-
-        <div class="telegram-section">
-            <p class="telegram-title">💬 Check URLs on Telegram</p>
-            <a href="https://t.me/URL_Safety_Checker_bot" class="telegram-btn" target="_blank">
-                <span class="telegram-icon">✈️</span>
-                <span>Open Telegram Bot</span>
-            </a>
-            <p style="margin-top: 15px; font-size: 14px; color: #666;">
-                Our bot uses Google Safe Browsing API for instant URL verification
-            </p>
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <a href="signin.html" style="text-decoration: none; display: inline-block;">
+                    <button class="btn" style="max-width: 400px;">Get Started</button>
+                </a>
+            </section>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">
+            <i class="fab fa-telegram-plane" style="margin-right: 6px;"></i> Also available on Telegram! Check URLs instantly with our bot: 
+            <a href="https://t.me/URL_Safety_Checker_bot" class="footer-link" target="_blank" rel="noopener noreferrer">
+                @URL_Safety_Checker_bot
+            </a>
+        </p>
+        <p style="margin-top: 10px; font-size: 13px; opacity: 0.8;">
+            Powered by Google Safe Browsing API | Built with <i class="fas fa-heart" style="color: #ef4444;"></i> by Team URL Safety
+        </p>
+    </footer>
 </body>
 </html>

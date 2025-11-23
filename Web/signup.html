@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Create an account for URL Safety Checker">
+    <title>Sign Up - URL Safety Checker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="card">
+            <div class="text-center" style="margin-bottom: 30px;">
+                <div style="font-size: 50px; margin-bottom: 15px; color: #2563eb;"><i class="fas fa-user-plus"></i></div>
+                <h2>Create Account</h2>
+                <p class="subtitle" style="margin-bottom: 0;">Join URL Safety Checker to protect yourself online</p>
+            </div>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" role="alert" aria-live="polite"></div>
+
+            <!-- Sign Up Form -->
+            <form onsubmit="handleSignUp(event)" aria-label="Sign up form">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="fullname" 
+                        name="fullname" 
+                        placeholder="Enter your full name"
+                        required
+                        aria-required="true"
+                        autocomplete="name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email"
+                        required
+                        aria-required="true"
+                        autocomplete="email"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Create a password"
+                        required
+                        aria-required="true"
+                        autocomplete="new-password"
+                        minlength="6"
+                    >
+                </div>
+
+                <button type="submit" class="btn" aria-label="Create new account">
+                    Sign Up
+                </button>
+            </form>
+
+            <!-- Sign In Link -->
+            <div class="text-center" style="margin-top: 20px;">
+                <p style="color: #64748b; font-size: 14px;">
+                    Already have an account? 
+                    <a href="signin.html" class="link">Sign in</a>
+                </p>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="text-center" style="margin-top: 15px;">
+                <a href="index.html" class="link"><i class="fas fa-arrow-left" style="margin-right: 6px;"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>

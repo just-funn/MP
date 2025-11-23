@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sign in to URL Safety Checker Dashboard">
+    <title>Sign In - URL Safety Checker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="card">
+            <div class="text-center" style="margin-bottom: 30px;">
+                <div style="font-size: 50px; margin-bottom: 15px; color: #2563eb;"><i class="fas fa-lock"></i></div>
+                <h2>Admin Login</h2>
+                <p class="subtitle" style="margin-bottom: 0;">Sign in to access the URL Safety Checker dashboard</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message" role="alert" aria-live="polite"></div>
+
+            <!-- Login Form -->
+            <form onsubmit="handleSignIn(event)" aria-label="Sign in form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        placeholder="Enter username"
+                        required
+                        aria-required="true"
+                        autocomplete="username"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        placeholder="Enter password"
+                        required
+                        aria-required="true"
+                        autocomplete="current-password"
+                    >
+                </div>
+
+                <button type="submit" class="btn" aria-label="Login to dashboard">
+                    Login
+                </button>
+            </form>
+
+            <!-- Sign Up Link -->
+            <div class="text-center" style="margin-top: 20px;">
+                <p style="color: #64748b; font-size: 14px;">
+                    Don't have an account? 
+                    <a href="signup.html" class="link">Create account</a>
+                </p>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="text-center" style="margin-top: 15px;">
+                <a href="index.html" class="link"><i class="fas fa-arrow-left" style="margin-right: 6px;"></i> Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/app.js"></script>
+</body>
+</html>
