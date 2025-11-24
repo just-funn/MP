@@ -1,10 +1,10 @@
-# URL Safety Checker
+# URL Safety Verification System
 
 A modern web application and Telegram bot for checking URL safety and protecting users from malicious links, phishing attacks, and malware.
 
 ## 📋 Project Overview
 
-URL Safety Checker is an academic project designed to help users verify the safety of URLs before clicking them. The project includes a professional web interface and a Telegram bot, both powered by Google Safe Browsing API for real-time threat detection.
+URL Safety Verification System is an academic project designed to help users verify the safety of URLs before clicking them. The project includes a professional web interface and a Telegram bot, both powered by Google Safe Browsing API for real-time threat detection.
 
 ## ✨ Features
 
@@ -180,4 +180,4 @@ For issues or questions:
 
 ---
 
-© 2025 URL Safety Checker • Designed for Academic Project Use Only • All Rights Reserved
+© 2025 URL Safety Verification System • Designed for Academic Project Use Only • All Rights Reserved
