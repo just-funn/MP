@@ -26,20 +26,57 @@ function hashURL(url) {
     return Math.abs(hash);
 }
 
-// Check if URL is in a list of known unsafe patterns
+// Check if URL matches unsafe patterns
 function isKnownUnsafePattern(url) {
-    const unsafePatterns = [
-        'malware',
-        'phishing',
-        'virus',
-        'hack',
-        'scam',
-        'fraud',
-        'suspicious'
-    ];
-    
     const lowerUrl = url.toLowerCase();
-    return unsafePatterns.some(pattern => lowerUrl.includes(pattern));
+
+    // ===== Expanded Suspicious Keyword List =====
+    const unsafePatterns = [
+        // Existing keywords
+        'malware', 'phishing', 'virus', 'hack', 'scam', 'fraud', 'suspicious',
+
+        // Common phishing words
+        'login', 'verify', 'secure', 'update', 'account', 'bank', 'payment',
+
+        // Spam/marketing keywords
+        '100% free', '100% satisfied',
+        'additional income', 'extra cash',
+        'best price', 'lowest price',
+        'cash bonus', 'big bucks',
+        'free access', 'free gift', 'free trial',
+        'guaranteed',
+        'increase sales', 'increase traffic',
+        'limited time offer',
+        'make money',
+        'money back',
+        'prize', 'winner',
+        'risk-free',
+        'save up to',
+        'special promotion'
+    ];
+
+    // Keyword Detection
+    if (unsafePatterns.some(pattern => lowerUrl.includes(pattern))) {
+        return true;
+    }
+
+    // ===== Suspicious Domain Extensions =====
+    const badExtensions = ['.xyz', '.top', '.zip', '.click', '.buzz'];
+    if (badExtensions.some(ext => lowerUrl.endsWith(ext))) {
+        return true;
+    }
+
+    // ===== Detect IP-based URLs =====
+    if (/^https?:\/\/\d{1,3}(\.\d{1,3}){3}/.test(lowerUrl)) {
+        return true;
+    }
+
+    // ===== Extremely Long URL =====
+    if (url.length > 150) {
+        return true;
+    }
+
+    return false;
 }
 
 // Main URL check function
@@ -62,26 +99,26 @@ function checkURL() {
     }
 
     loading.classList.add('show');
-    
-    // Simulate API check with consistent results
+
     setTimeout(() => {
         loading.classList.remove('show');
-        
-        // Check for known unsafe patterns first
+
+        // Check known unsafe patterns first
         if (isKnownUnsafePattern(url)) {
             showResult('<i class="fas fa-exclamation-triangle"></i> WARNING: Potentially UNSAFE<br><small>This URL may contain threats</small>', 'unsafe');
             return;
         }
-        
-        // Use hash-based consistent check
+
+        // Hash-based simulated analysis
         const urlHash = hashURL(url);
         const isSafe = urlHash % 10 >= 3;
-        
+
         if (isSafe) {
             showResult('<i class="fas fa-check-circle"></i> URL appears to be SAFE<br><small>No threats detected</small>', 'safe');
         } else {
             showResult('<i class="fas fa-exclamation-triangle"></i> WARNING: Potentially UNSAFE<br><small>This URL may contain threats</small>', 'unsafe');
         }
+
     }, 1500);
 }
 
@@ -116,13 +153,13 @@ if (document.getElementById('urlInput')) {
 // Sign In validation
 function handleSignIn(event) {
     event.preventDefault();
-    
+
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value;
     const errorMessage = document.getElementById('errorMessage');
-    
+
     errorMessage.classList.remove('show');
-    
+
     if (username === 'admin' && password === '123456') {
         window.location.href = 'dashboard.html';
     } else {
@@ -134,16 +171,16 @@ function handleSignIn(event) {
 // Sign Up handling
 function handleSignUp(event) {
     event.preventDefault();
-    
+
     const fullname = document.getElementById('fullname').value.trim();
     const email = document.getElementById('email').value.trim();
     const password = document.getElementById('password').value;
     const successMessage = document.getElementById('successMessage');
-    
+
     if (fullname && email && password) {
         successMessage.textContent = 'Account created successfully (Frontend Only — no database)';
         successMessage.classList.add('show');
-        
+
         setTimeout(() => {
             window.location.href = 'signin.html';
         }, 2000);
